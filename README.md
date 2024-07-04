@@ -14,7 +14,7 @@ BFCky is a Python script designed to brute-force subdomains for a specified doma
     To scan subdomains for a domain, run the script `main.py` with the `--site` argument followed by the target domain. For example:
 
     ```
-    python subdomain_scanner.py --site google.com
+    python main.py --site google.com
     ```
 
 ## Wordlist
