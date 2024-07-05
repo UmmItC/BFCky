@@ -20,23 +20,24 @@ def read_wordlist(filename):
         subdomains = f.read().splitlines()
     return subdomains
 
-# Function to check HTTP status code for a single subdomain
+# Function to check HTTP status code
 def check_subdomain(domain, subdomain):
     protocols = ['http', 'https']
     found = False
     for protocol in protocols:
         url = f"{protocol}://{subdomain}.{domain}"
+        print(f"\rTrying {url}", end='.', flush=True)
         try:
-            response = requests.get(url, timeout=5)  # Adjust timeout as needed
+            response = requests.get(url, timeout=5)
             if response.status_code == 200:
-                print(colors.GREEN + f"[+] Found new: {subdomain}" + colors.END)
+                print(colors.GREEN + f"\r[+] Found new: {subdomain}.{domain}" + colors.END)  # Print on the same line
                 found = True
                 break
         except requests.ConnectionError:
             pass
     
     if not found:
-        print(colors.YELLOW + f"[-] Subdomain Not found: {subdomain}" + colors.END)
+        print(colors.YELLOW + f"\r[-] Subdomain Not found: {subdomain}.{domain}" + colors.END)  # Print on the same line
 
 # Main function
 def main():
