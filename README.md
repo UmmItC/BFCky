@@ -1,12 +1,12 @@
-# BFCky
+# DO
 
-BFCky is a Python script designed to brute-force subdomains for a specified domain using custom wordlists. It utilizes the requests library to check HTTP status codes for each subdomain.
+DO is a Python script designed to brute-force subdomains for a specified domain using custom wordlists. It utilizes the requests library to check HTTP status codes for each subdomain.
 
 ## Usage
 
 1. Clone the repository:
    ```
-   git clone https://codeberg.org/UmmIt/BFCky
+   git clone https://codeberg.org/UmmIt/DO
    ```
 
 2. Running the Scanner
